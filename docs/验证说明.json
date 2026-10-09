@@ -1,0 +1,16 @@
+{
+  "installer_cases_passed": [
+    "success",
+    "wrong_source",
+    "existing_output",
+    "bad_payload",
+    "overlap",
+    "wrong_target_hash",
+    "existing_lock"
+  ],
+  "complete_original_to_target_rebuild": true,
+  "runtime": "bundled macOS arm64 Python 3.12.14",
+  "target_sha256": "bdf730e6e9817f1257f0ce0da80fafa45287852108aab7b2646d812914e853a1",
+  "game_runtime_this_release": false,
+  "windows_intel_android_ps2_verified": false
+}

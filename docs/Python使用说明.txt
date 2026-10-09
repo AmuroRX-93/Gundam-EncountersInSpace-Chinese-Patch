@@ -1,0 +1,55 @@
+高达 相逢在宇宙 0.1.0：Python与双系统自动化说明
+
+1. 双击安装（推荐）
+完整解压后，Windows双击Windows_Install.cmd；Mac双击macOS_安装.command。
+窗口提示时，把原版ISO拖进去按回车。路径有中文或空格可以使用，不要只拖父文件夹。
+脚本自动选择包内运行环境：Windows x64 Python 3.13.15、Apple Silicon / Intel Mac Python 3.12.14。
+无需pip、第三方Python模块、管理员权限或网络。系统Python 3.8+也可选用，但不是必须安装的依赖。
+仅Windows 64位提供内置运行时；没有承诺Windows 7、Windows ARM原生或32位系统兼容。
+
+2. Windows PowerShell命令
+在解压后的 GundamEIS_CHS_0.1.0 文件夹打开PowerShell。把示例路径替换为你的真实路径：
+
+只核对原版和补丁：
+& '.\runtime\windows-x64\python.exe' -I '.\install.py' 'D:\Games\Kidou Senshi Gundam - Meguriai Sora (Japan).iso' --check-only
+
+指定输出位置（父文件夹必须事先存在）：
+& '.\runtime\windows-x64\python.exe' -I '.\install.py' 'D:\Games\Kidou Senshi Gundam - Meguriai Sora (Japan).iso' --output 'D:\Games\GundamEIS_CHS_0.1.0.iso'
+
+只核对已经生成的结果：
+& '.\runtime\windows-x64\python.exe' -I '.\install.py' --verify-result 'D:\Games\GundamEIS_CHS_0.1.0.iso'
+
+独立计算任意文件的SHA256：
+Get-FileHash -Algorithm SHA256 -LiteralPath 'D:\Games\GundamEIS_CHS_0.1.0.iso' | Format-List
+
+3. macOS终端命令
+先输入cd加空格，拖入解压后的补丁文件夹并回车。Apple Silicon示例：
+
+./runtime/macos-arm64/python/bin/python3 -I ./install.py '/完整路径/Kidou Senshi Gundam - Meguriai Sora (Japan).iso' --check-only
+./runtime/macos-arm64/python/bin/python3 -I ./install.py '/完整路径/Kidou Senshi Gundam - Meguriai Sora (Japan).iso' --output '/完整路径/GundamEIS_CHS_0.1.0.iso'
+./runtime/macos-arm64/python/bin/python3 -I ./install.py --verify-result '/完整路径/GundamEIS_CHS_0.1.0.iso'
+shasum -a 256 '/完整路径/GundamEIS_CHS_0.1.0.iso'
+
+Intel Mac把macos-arm64替换为macos-x64。自动启动器会根据uname -m选择，不强制使用转译。
+如果解压工具丢失执行权限，仅恢复相关文件的权限：
+chmod u+x './macOS_安装.command' './runtime/macos-arm64/python/bin/python3'
+Intel Mac对应替换路径。若系统安全提示阻止执行，先核对来源和校验值，再通过系统提供的单项打开选项处理；不要关闭全局安全保护。
+
+4. 可选系统Python
+python3 install.py '/完整路径/原版.iso' --output '/完整路径/新版.iso'
+Windows已有合适Python时可使用：py -3 install.py "D:\原版.iso" --output "D:\新版.iso"
+标准库即可，核心脚本语法最低3.8；并没有在所有3.8系统上实测。
+
+5. 错误与恢复
+“大小/SHA256不匹配”：输入不是要求的原版，或下载/解压不完整。不要编辑清单强行安装。
+“输出已经存在”：保留该文件，先用--verify-result核对；重新安装时指定另一个文件名。
+“空间不足/FAT32”：更换有足够空间且支持>4GiB文件的输出磁盘。不要因报错格式化存档盘。
+“.install.lock存在”：可能另一实例正在处理同一输出，不要重复启动。程序不会删除别的实例的锁。
+正常Ctrl+C或普通错误会清理本次临时输出，保留原版。强制结束进程/掉电后可能留下以新版文件名开头的隐藏.partial文件和.install.lock；确认安装程序已完全退出后，仅删除那次任务的临时文件和锁，再重新运行。本版本不支持断点续作。
+请不要批量删除ISO、存档、模拟器缓存或其他锁文件。
+Windows自动窗口结尾有暂停；如果失败，把完整报错、原版大小/SHA、操作系统和剩余空间发给维护者。手动终端运行不会额外暂停。
+
+6. 包内文件
+install.py + manifest.json + update.bin：桌面Python合成路线，来源/载荷/目标三重SHA校验。
+runtime与Python第三方许可：随包的解释器及许可。来源见Python来源.json。
+SHA256SUMS.txt：包内文件校验清单。用于完整性核对，不等于数字签名或官方授权。

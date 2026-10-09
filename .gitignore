@@ -1,0 +1,5 @@
+*.iso
+*.bin
+runtime/
+*.7z*
+__pycache__/
