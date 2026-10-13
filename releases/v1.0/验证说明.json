@@ -1,0 +1,22 @@
+{
+  "installer_cases_passed": [
+    "success",
+    "wrong_source",
+    "existing_output",
+    "bad_payload",
+    "overlap",
+    "wrong_target_hash",
+    "existing_lock"
+  ],
+  "bundled_macos_arm64_full_rebuild": true,
+  "standard_xdelta_full_rebuild": true,
+  "standard_xdelta_sha256": "a16933eb2368cc31699c7d58ddfdac4a7e2711e68d11a59bae1e635599e669b4",
+  "standard_xdelta_bytes": 1035300950,
+  "target_sha256": "69c2250dd91cdfd55cd44921419196a4d8fae379009adfd550143149c5e9c6e0",
+  "target_bytes": 4643094528,
+  "all_4703_caption_readback_verified": true,
+  "game_runtime_tested_this_release": false,
+  "other_desktop_architectures": "static inventory only",
+  "android_and_ps2": "deployment documented; device execution untested",
+  "original_unchanged": true
+}
