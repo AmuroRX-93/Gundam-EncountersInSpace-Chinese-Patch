@@ -1,0 +1,46 @@
+{
+  "version": "1.0.1",
+  "game": "Gundam Encounters in Space",
+  "serial": "SLPS-25062",
+  "disc_revision": "1.03",
+  "source_version": "1.0",
+  "source_sha256": "69c2250dd91cdfd55cd44921419196a4d8fae379009adfd550143149c5e9c6e0",
+  "target_sha256": "1095f8579499c5e53a4576247c90938a403a62ee2b9b07bedcdf723c6db44878",
+  "iso_size": 4643094528,
+  "changed_bytes": 24,
+  "affected_variants": 4,
+  "animation_keyframes": 16,
+  "audit_counts": {
+    "game_members": 7038,
+    "drm_members": 193,
+    "sprites": 61144,
+    "keyframes": 252047,
+    "modified_drm_members": 1,
+    "changed_reference_or_geometry_sprites": 34,
+    "ledger_rows": 194,
+    "latest_ledger_regions": 190,
+    "superseded_ledger_rows": 4,
+    "matched_regions": 164,
+    "matched_sprite_consumers": 619,
+    "nontexture_objects_without_uv": 4,
+    "invalid_texture_sprite_records": 0,
+    "confirmed_candidates": 4,
+    "small_scale_text_consumers": 4
+  },
+  "source_dimensions": [
+    216,
+    22
+  ],
+  "old_destination_dimensions": [
+    14,
+    18
+  ],
+  "new_destination_dimensions": [
+    216,
+    22
+  ],
+  "hidden_height_preserved": true,
+  "code_font_audio_movies_and_subtitles_unchanged": true,
+  "offline_geometry_verified": true,
+  "actual_game_capture_verified": false
+}

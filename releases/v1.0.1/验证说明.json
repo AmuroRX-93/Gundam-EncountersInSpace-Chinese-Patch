@@ -1,0 +1,37 @@
+{
+  "version": "1.0.1",
+  "target_sha256": "1095f8579499c5e53a4576247c90938a403a62ee2b9b07bedcdf723c6db44878",
+  "target_bytes": 4643094528,
+  "bundled_macos_arm64_full_rebuild": true,
+  "fixed_spans_stream_rebuild": false,
+  "standard_xdelta_stream_rebuild": true,
+  "standard_xdelta_sha256": "5cdfca4ffc50a987a5e99433de75c1d33cde3b19e59b759904749fe52ae2e2ff",
+  "standard_xdelta_bytes": 1005908224,
+  "original_unchanged": true,
+  "game_runtime_tested_by_packaging_agent": false,
+  "other_desktop_architectures": "static inventory only",
+  "android_and_ps2": "deployment documented; device execution untested",
+  "source_revision_evidence": {
+    "provided_by": "parent_agent_full_disc_byte_comparison",
+    "previous_target_sha256": "69c2250dd91cdfd55cd44921419196a4d8fae379009adfd550143149c5e9c6e0",
+    "changed_bytes": 24,
+    "changed_sprites": 4,
+    "keys_reviewed": 252047,
+    "drm_reviewed": 193,
+    "objects_reviewed": 61144,
+    "localized_text_consumers_reviewed": 619,
+    "changed_sprite_keyframes": 16,
+    "all_other_bytes_unchanged": true,
+    "all_4703_captions_preserved": true,
+    "game_runtime_tested_by_packaging_agent": false
+  },
+  "protection_tests": [
+    "success",
+    "wrong_source",
+    "existing_output",
+    "bad_payload",
+    "overlap",
+    "wrong_target_hash",
+    "existing_lock"
+  ]
+}

@@ -1,0 +1,15 @@
+内置环境仅供本包的 ISO 修补和 SHA256 校验，无需另外安装 Python 或 pip。
+入口显式使用 runtime 内对应架构解释器，以 -I 隔离 PYTHONHOME/PYTHONPATH，避免误用系统环境。
+Windows：Windows_安装.cmd
+macOS：macOS_安装.command；如文件失去执行权限，可在本包目录终端运行 chmod u+x macOS_安装.command，然后运行 ./macOS_安装.command。
+Linux：sh run.sh
+macOS/Linux 命令行直达：sh run.sh "原盘.iso" --output "新输出.iso"
+只检查输入与补丁：sh run.sh "原盘.iso" --check-only
+只校验中文输出：sh run.sh --verify-result "Encounter_in_Space_ALLPLATFORM_1.0.1.iso"
+Windows 也可将上述参数传给 Windows_安装.cmd；交互菜单更容易使用。
+输出路径包含中文或空格时请加引号；拖拽文件无需手动抄路径。
+所有操作结束后检查成功/失败提示，不要在合成中途手动关闭窗口。失败时原盘保留，安装器清理自己创建的临时输出。
+遇 install.lock 提示时先确认是否还有另一个安装任务运行；不要在任务进行中删除锁。
+若系统阻止未签名可执行程序，按系统正常的来源验证/单文件授权流程处理，不关闭全局安全保护。
+Python 来源、版本和原下载摘要见 Python来源.json；展开后的文件摘要见 FILES.sha256；许可证在 licenses。
+运行环境可能包含同一解释器的多个文件名，这是便携包为跨文件系统展开链接后的正常结构，不是要求运行多个程序。
